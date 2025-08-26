@@ -1,7 +1,82 @@
 .color-title {
-  margin-top: 2rem;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  margin-top: 2rem; /* your added spacing */
+  color: #333;
 }
 
-.all {
-  background: linear-gradient(blue, crimson);
+.sidebar-label-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  cursor: pointer;
+  position: relative;
+  padding-left: 35px;
+  font-size: 15px;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.sidebar-label-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  background: #eee;
+  transition: 0.3s all;
+}
+
+.sidebar-label-container input:checked ~ .checkmark {
+  border-color: #000;
+  box-shadow: 0 0 0 3px #2196f3 inset;
+}
+
+.checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.sidebar-label-container input:checked ~ .checkmark::after {
+  display: block;
+  left: 6px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: white;
+}
+
+/* Gradient for “All” option */
+.checkmark.all {
+  background: linear-gradient(135deg, blue, crimson);
+}
+
+/* Colors from props */
+.checkmark[style*="black"] {
+  background: black;
+}
+.checkmark[style*="blue"] {
+  background: blue;
+}
+.checkmark[style*="red"] {
+  background: red;
+}
+.checkmark[style*="green"] {
+  background: green;
+}
+.checkmark[style*="white"] {
+  background: white;
+  border: 2px solid black;
 }

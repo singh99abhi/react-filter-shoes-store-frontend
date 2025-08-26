@@ -1,12 +1,43 @@
-.recommended-flex {
-  display: flex;
-  margin-left: 20rem;
+.recommended-container {
+  margin: 20px 0;
+  padding: 0 1rem;
 }
 
 .recommended-title {
-  margin-left: 20rem;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+}
 
-  font-size: 20px;
+.recommended-flex {
+  display: flex;
+  flex-wrap: wrap; /* Wrap on small screens */
+  gap: 10px;
+}
+
+/* Buttons inside recommended */
+.recommended-flex .btns,
+.recommended-flex button {
+  padding: 8px 16px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.recommended-flex .btns:hover,
+.recommended-flex button:hover {
+  background-color: #2196f3;
+  color: white;
+  border-color: #2196f3;
+}
+
+/* Active button style */
+.recommended-flex .active {
+  background-color: #2196f3;
+  color: white;
+  border-color: #2196f3;
 }
